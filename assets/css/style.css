@@ -12,7 +12,7 @@
 
 /* Common */
 html {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Work Sans', Arial, sans-serif;
 }
 
 .button {
@@ -82,7 +82,6 @@ nav ul li {
 nav ul li a {
   display: block;
   color: #fff;
-  text-transform: uppercase;
   text-decoration: none;
   line-height: 69px;
   padding: 0 24px;
