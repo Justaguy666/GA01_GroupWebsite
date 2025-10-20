@@ -124,6 +124,13 @@ main {
   min-height: calc(100vh - 69px - 30px + 30px);
 }
 
+#member-info {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: column;
+}
+
 /* Footer */
 footer {
   display: block;
@@ -287,14 +294,14 @@ heading h2 {
   opacity: 0.6;
 }
 
-.member-intro{
+.member-intro {
   margin: 10px 20px;
   line-height: 2;
   text-align: justify;
   font-size: small;
 }
 
-.member-role{
+.member-role {
   display: flex;
   border-radius: 50px;
   width: 244px;
@@ -308,7 +315,7 @@ heading h2 {
   font-weight: 800;
 }
 
-footing .social-list a{
+footing .social-list a {
   text-decoration: none;
   opacity: 0.8;
   color: #000;
