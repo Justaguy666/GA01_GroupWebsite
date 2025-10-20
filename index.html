@@ -91,13 +91,11 @@
             menuItem.onclick = function(event) {
                 var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
 
-                // CHỈ xử lý cho menu cha trên giao diện mobile
                 if (isParentMenu && window.innerWidth <= 739) {
-                    event.preventDefault(); // Ngăn thẻ <a> điều hướng
-                    event.stopPropagation(); // Ngăn sự kiện lan ra các phần tử khác
-                    this.parentElement.classList.toggle('active'); // Bật/tắt submenu
+                    event.preventDefault();
+                    event.stopPropagation();
+                    this.parentElement.classList.toggle('active');
                 } 
-                // Đối với các link còn lại (không phải menu cha) thì đóng menu
                 else if (!isParentMenu) {
                     header.classList.remove('open');
                 }

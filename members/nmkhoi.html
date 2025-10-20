@@ -124,14 +124,13 @@
             
             menuItem.onclick = function(event) {
                 var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
-                if (isParentMenu) {
-                    // On mobile, clicking a parent menu item shouldn't navigate, just show subnav
-                    if (window.innerWidth <= 739) {
-                        // This part is tricky without changing the CSS logic for hover.
-                        // For now, let's just allow it to close the menu if it's not a subnav link
-                    }
-                } else {
-                    // Close menu for any non-parent link click
+
+                if (isParentMenu && window.innerWidth <= 739) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    this.parentElement.classList.toggle('active');
+                } 
+                else if (!isParentMenu) {
                     header.classList.remove('open');
                 }
             }
