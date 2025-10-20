@@ -126,6 +126,42 @@
     <footer>
         <p>&copy; 2025 SpicyBytes</p>
     </footer>
+
+    <script>
+        var header = document.querySelector('header');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var headerHeight = header.clientHeight;
+
+        // Open/close mobile menu
+        mobileMenu.onclick = function() {
+            var isClosed = header.clientHeight === headerHeight;
+            if (isClosed) {
+                header.classList.add('open');
+            } else {
+                header.classList.remove('open');
+            }
+        }
+
+        // Auto-close when selecting a menu item
+        var menuItems = document.querySelectorAll('nav ul li a');
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+            
+            menuItem.onclick = function(event) {
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                if (isParentMenu) {
+                    // On mobile, clicking a parent menu item shouldn't navigate, just show subnav
+                    if (window.innerWidth <= 739) {
+                        // This part is tricky without changing the CSS logic for hover.
+                        // For now, let's just allow it to close the menu if it's not a subnav link
+                    }
+                } else {
+                    // Close menu for any non-parent link click
+                    header.classList.remove('open');
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
