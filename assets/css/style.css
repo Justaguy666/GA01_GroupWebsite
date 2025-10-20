@@ -9,6 +9,8 @@
 :root {
   --header-gradient: linear-gradient(275deg, hsl(217, 10%, 25%) 0%, hsl(216, 18%, 16%) 100%);
   --body-gradient: linear-gradient(150.19deg, rgba(34, 40, 49, 0.24) 23.24%, rgba(57, 62, 70, 0.56) 46.27%, rgba(223, 208, 184, 0.8) 76.97%, rgba(255, 255, 255, 0.8) 100%);
+  --member-info-left-content-gradient: linear-gradient(117.11deg, rgba(255, 255, 255, 0.25) 0%, rgba(248, 248, 248, 0.5) 46.94%, rgba(241, 241, 241, 0.5) 93.88%);
+  --member-info-gradient: linear-gradient(117.11deg, rgba(255, 255, 255, 0.25) 0%, rgba(248, 248, 248, 0.5) 46.94%, rgba(241, 241, 241, 0.5) 93.88%);
 }
 
 /* Common */
@@ -255,7 +257,7 @@ footer p {
   border-radius: 50px;
   width: 640px;
   height: 506px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-image: var(--member-info-gradient);
   border-style: solid;
   border-width: 2px;
   margin: 0px auto;
@@ -267,10 +269,13 @@ footer p {
     width: 40%;
     padding: 10px;
     border-right: 2px solid black;
+    background-image: var(--member-info-left-content-gradient);
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
 
 .member-ava {
