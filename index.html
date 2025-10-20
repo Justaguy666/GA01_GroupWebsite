@@ -49,59 +49,83 @@
         </section>
 
         <section id="card-list">
-            <article id="member-card">
-                <div class="member-card-front">
-                    <img src="./assets/images/members/profile-okvinh.jpg" alt="">
-                    <h4>Ong Khánh Vinh</h4>
-                    <span class="member-id">23127522</span>
+            <a href="./members/okvinh.html" class="member-card">
+              <div class="member-card-inner">
+                <div class="member-card-face member-card-front">
+                  <img src="./assets/images/members/profile-okvinh.jpg" alt="">
                 </div>
-                <div class="member-card-back">
-                    <img src="./assets/images/members/profile-okvinh.jpg" alt="">
-                    <h4>Ong Khánh Vinh</h4>
-                    <span class="member-id">Front-end Developer</span>
+          
+                <div class="member-card-face member-card-back">
+                  <article class="member">
+                    <figure>
+                      <img src="./assets/images/members/profile-okvinh.jpg" alt="">
+                    </figure>
+                    <div class="member-info">
+                      <h4>Ong Khánh Vinh</h4>
+                      <span class="member-id">23127522</span>
+                    </div>
+                  </article>
+                  <div class="line"></div>
+                  <div class="member-introduce">
+                    <p>Front-end Developer</p>
+                  </div>
                 </div>
-            </article>
-        </section>
+              </div>
+            </a>
+
+            <a href="./members/nmkhoi.html" class="member-card">
+                <div class="member-card-inner">
+                  <div class="member-card-face member-card-front">
+                    <img src="./assets/images/members/profile-nmkhoi.jpg" alt="">
+                  </div>
+            
+                  <div class="member-card-face member-card-back">
+                    <article class="member">
+                      <figure>
+                        <img src="./assets/images/members/profile-nmkhoi.jpg" alt="">
+                      </figure>
+                      <div class="member-info">
+                        <h4>Nguyễn Minh Khôi</h4>
+                        <span class="member-id">23127070</span>
+                      </div>
+                    </article>
+                    <div class="line"></div>
+                    <div class="member-introduce">
+                      <p>Full-Stack Developer</p>
+                    </div>
+                  </div>
+                </div>
+            </a>
+
+            <a href="./members/ldnbao.html" class="member-card">
+                <div class="member-card-inner">
+                  <div class="member-card-face member-card-front">
+                    <img src="./assets/images/members/profile-ldnbao.jpg" alt="">
+                  </div>
+            
+                  <div class="member-card-face member-card-back">
+                    <article class="member">
+                      <figure>
+                        <img src="./assets/images/members/profile-ldnbao.jpg" alt="">
+                      </figure>
+                      <div class="member-info">
+                        <h4>Lê Đức Ngọc Bảo</h4>
+                        <span class="member-id">23127155</span>
+                      </div>
+                    </article>
+                    <div class="line"></div>
+                    <div class="member-introduce">
+                      <p>Back-end Developer</p>
+                    </div>
+                  </div>
+                </div>
+            </a>
+        </section>          
     </main>
 
     <footer>
         <p>&copy; 2025 SpicyBytes</p>
     </footer>
-
-    <script>
-        var header = document.querySelector('header');
-        var mobileMenu = document.getElementById('mobile-menu');
-        var headerHeight = header.clientHeight;
-
-        // Open/close mobile menu
-        mobileMenu.onclick = function() {
-            var isClosed = header.clientHeight === headerHeight;
-            if (isClosed) {
-                header.classList.add('open');
-            } else {
-                header.classList.remove('open');
-            }
-        }
-
-        // Auto-close when selecting a menu item
-        var menuItems = document.querySelectorAll('nav ul li a');
-        for (var i = 0; i < menuItems.length; i++) {
-            var menuItem = menuItems[i];
-            
-            menuItem.onclick = function(event) {
-                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
-
-                if (isParentMenu && window.innerWidth <= 739) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    this.parentElement.classList.toggle('active');
-                } 
-                else if (!isParentMenu) {
-                    header.classList.remove('open');
-                }
-            }
-        }
-    </script>
 </body>
 
 </html>

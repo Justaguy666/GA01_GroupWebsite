@@ -68,7 +68,7 @@
                 <section class="member-intro">
                     <p>
                         Hi! I’m Ong Khánh Vinh, a software engineer student with a strong interest 
-                        in software engineering and cloud technologies. 
+                        in software engineering. 
                     </p>
 
                     <p>
@@ -77,8 +77,8 @@
                     </p>
 
                     <p>
-                        My goal is to become a DevOps engineer or Solution Architect who bridges 
-                        the gap between development and operations with scalable, reliable systems.
+                        My goal is to become a Software or Data engineer who bridges 
+                        the gap between development and operations with their apps and database.
                     </p>
 
                 </section>
@@ -87,7 +87,7 @@
                 <!-- Link to social media profiles -->
                 <footing>
                     <div class="social-list">
-                        <a href="https://www.facebook.com/profile.php?id=100013830248681" target="_blank" class="ti-facebook"></a>
+                        <a href="https://www.facebook.com/khanh.vinh.67178/" target="_blank" class="ti-facebook"></a>
                         <a href="https://github.com/Justaguy666" target="_blank" class="ti-github"></a>
                         <a href="https://www.linkedin.com/in/nmkhoi23/" target="_blank" class="ti-linkedin"></a>
                         <a href="mailto:okvinh23@clc.fitus.edu.vn" target="_blank" class="ti-email"></a>
@@ -102,41 +102,6 @@
     <footer>
         <p>&copy; 2025 SpicyBytes</p>
     </footer>
-
-    <script>
-        var header = document.querySelector('header');
-        var mobileMenu = document.getElementById('mobile-menu');
-        var headerHeight = header.clientHeight;
-
-        // Open/close mobile menu
-        mobileMenu.onclick = function() {
-            var isClosed = header.clientHeight === headerHeight;
-            if (isClosed) {
-                header.classList.add('open');
-            } else {
-                header.classList.remove('open');
-            }
-        }
-
-        // Auto-close when selecting a menu item
-        var menuItems = document.querySelectorAll('nav ul li a');
-        for (var i = 0; i < menuItems.length; i++) {
-            var menuItem = menuItems[i];
-            
-            menuItem.onclick = function(event) {
-                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
-
-                if (isParentMenu && window.innerWidth <= 739) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    this.parentElement.classList.toggle('active');
-                } 
-                else if (!isParentMenu) {
-                    header.classList.remove('open');
-                }
-            }
-        }
-    </script>
 </body>
 
 </html>
