@@ -90,14 +90,15 @@
             
             menuItem.onclick = function(event) {
                 var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+
                 if (isParentMenu) {
-                    // On mobile, clicking a parent menu item shouldn't navigate, just show subnav
+                    // Nếu là menu cha (có submenu)
                     if (window.innerWidth <= 739) {
-                        // This part is tricky without changing the CSS logic for hover.
-                        // For now, let's just allow it to close the menu if it's not a subnav link
+                        event.preventDefault(); // Ngăn link nhảy trang
+                        this.parentElement.classList.toggle('active'); // Bật/tắt submenu bằng class CSS
                     }
                 } else {
-                    // Close menu for any non-parent link click
+                    // Nếu là menu con hoặc link thường → đóng menu
                     header.classList.remove('open');
                 }
             }

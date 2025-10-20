@@ -439,6 +439,14 @@ footing .social-list a {
         animation: slideDown 0.3s ease-in-out;
     }
 
+    nav ul li .subnav {
+        display: none;
+    }
+
+    nav ul li.active .subnav {
+        display: block;
+    }
+
     @keyframes slideDown {
         from { opacity: 0; transform: translateY(-10px); }
         to { opacity: 1; transform: translateY(0); }
