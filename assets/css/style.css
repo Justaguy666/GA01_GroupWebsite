@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+/* GLOBAL VARIABLES */
+:root {
+  --header-gradient: linear-gradient(275deg, hsl(217, 10%, 25%) 0%, hsl(216, 18%, 16%) 100%);
+  --card-gradient: linear-gradient(0deg, #FFFFFF 0%, #F8F8F8 50%, #F1F1F1 100%);
+}
+
 /* Common */
 html {
     font-family: Arial, Helvetica, sans-serif;
@@ -27,80 +33,113 @@ html {
 
 /* Main */
 
-#main {
-   
+body {
+    min-height: 100vh;
+    background-image: var(--body-gradient);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-#header {
-    height: 46px;
-    background-color: #000;
+header {
+    height: 69px;
+    background-image: var(--header-gradient);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
 }
 
-#nav, .subnav {
-    list-style-type: none;
+#left-header {
+    display: flex;
+    align-content: center;
 }
 
-#nav {
-    display: inline-block;
+#right-header  {
+    display: flex;
+    align-items: center;
 }
 
-#nav li {
-    display: block;
+img {
+    width: auto;
+    height: 50px;
+    border-radius: 50%;
+    padding : 0 24px;
 }
 
-#nav > li {
-    display: inline-block;
-    position: relative;
+nav ul {
+  display: flex;
+  list-style: none;
 }
 
-#nav > li > a {
-    color: #fff;
-    text-transform: uppercase;
+nav ul li {
+  position: relative;
 }
 
-#nav li a {
-    text-decoration: none;
-    line-height: 46px;
-    padding: 0px 24px;
-    display: block;
+nav ul li a {
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 69px;        /* căn giữa theo header */
+  padding: 0 24px;          /* vùng click rộng hơn */
+  transition: background-color 0.3s;
 }
 
-#nav li:hover .subnav {
-    display: block;
+nav ul li:hover > a {
+  background-color: #ccc;   /* hiệu ứng hover phủ toàn vùng */
+  color: #000;
 }
 
-#nav .subnav li:hover a,
-#nav > li:hover > a {
-    color: #000;
-    background-color: #ccc;
+/* === SUBNAV === */
+nav ul .subnav {
+  min-width: 160px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;                  /* căn trái theo menu cha */
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-#nav .subnav {
-    min-width: 160px;
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+nav ul li:hover .subnav {
+  display: block;
 }
 
-#nav .subnav a {
-    color: #000;
-    padding: 8px 16px;
-    line-height: 22px;
+nav ul .subnav li a {
+  color: #000;
+  padding: 8px 16px;
+  line-height: 22px;
 }
 
-#nav .nav-arrow-down {
-    font-size: 10px;
+nav ul .subnav li:hover a {
+  background-color: #ccc;
+  color: #000;
+}
+
+/* === BUTTON === */
+.button {
+  color: #fff;
+  text-decoration: none;
+  background-color: #000;
+  padding: 8px 16px;
+  display: inline-block;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #757575;
 }
 
 .nowrap {
     white-space: nowrap;
 }
 
+main {
+   
+}
