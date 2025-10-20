@@ -1,11 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SpicyBytes</title>
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/themify-icons-font/themify-icons/themify-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
+    <header>
+        <section id="left-header">
+            <img id="Logo" src="../assets/images/logo.png" alt="Logo">
+        </section>
+
+        <section id="right-header">
+            <!-- Begin: Navigation -->
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li>
+                        <a href="">
+                            Team
+                            <i class="nav-arrow-down ti-angle-down"></i>
+                        </a>
+                        <ul class="subnav">
+                            <li class="nowrap"><a href="./nmkhoi.html">Nguyễn Minh Khôi</a></li>
+                            <li class="nowrap"><a href="./ldnbao.html">Lê Đức Ngọc Bảo</a></li>
+                            <li class="nowrap"><a href="./okvinh.html">Ong Khánh Vinh</a></li>
+                        </ul>
+                    <li><a href="../about-us.html">About Us</a></li>
+                    </li>
+                </ul>
+            </nav>
+            <!-- End: Navigation -->
+            <div id="mobile-menu">
+                <i class="mobile-menu-btn ti-menu"></i>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="left-content">
+                <div class="member-ava">
+                    <img src="../assets/images/members/profile-nmkhoi.jpg" alt="Nguyễn Minh Khôi">
+                </div>
+            </div>
+            <div class="right-content">
+                <!-- Member information -->
+                <heading>
+                    <h1>Nguyễn Minh Khôi</h1>
+                    <h2>ID: 23127085</h2>
+
+                </heading>
+                <!-- Member information -->
+
+                <!-- Role of member -->
+                <section class="member-role">
+                    Team Leader
+                </section>
+                <!-- Role of member -->
+
+                <!-- Member introduction -->
+                <section class="member-intro">
+                    <p>
+                        Hi! I’m Nguyễn Minh Khôi, a software engineer student with a strong interest 
+                        in software engineering and cloud technologies. 
+                    </p>
+
+                    <p>
+                        I love building practical solutions, experimenting with new tools, 
+                        and improving systems through automation and clean design.
+                    </p>
+
+                    <p>
+                        My goal is to become a DevOps engineer or Solution Architect who bridges 
+                        the gap between development and operations with scalable, reliable systems.
+                    </p>
+
+                </section>
+                <!-- Member introduction -->
+
+                <!-- Link to social media profiles -->
+                <footing>
+                    <div class="social-list">
+                        <a href="https://www.facebook.com/profile.php?id=100013830248681" target="_blank" class="ti-facebook"></a>
+                        <a href="https://github.com/nmkhoi23" target="_blank" class="ti-github"></a>
+                        <a href="https://www.linkedin.com/in/nmkhoi23/" target="_blank" class="ti-linkedin"></a>
+                        <a href="mailto:nmkhoi23@clc.fitus.edu.vn" target="_blank" class="ti-email"></a>
+                    </div>
+                </footing>
+                <!-- Link to social media profiles -->
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SpicyBytes</p>
+    </footer>
+
+    <script>
+        var header = document.querySelector('header');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var headerHeight = header.clientHeight;
+
+        // Open/close mobile menu
+        mobileMenu.onclick = function() {
+            var isClosed = header.clientHeight === headerHeight;
+            if (isClosed) {
+                header.classList.add('open');
+            } else {
+                header.classList.remove('open');
+            }
+        }
+
+        // Auto-close when selecting a menu item
+        var menuItems = document.querySelectorAll('nav ul li a');
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+            
+            menuItem.onclick = function(event) {
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                if (isParentMenu) {
+                    // On mobile, clicking a parent menu item shouldn't navigate, just show subnav
+                    if (window.innerWidth <= 739) {
+                        // This part is tricky without changing the CSS logic for hover.
+                        // For now, let's just allow it to close the menu if it's not a subnav link
+                    }
+                } else {
+                    // Close menu for any non-parent link click
+                    header.classList.remove('open');
+                }
+            }
+        }
+    </script>
 </body>
+
 </html>
