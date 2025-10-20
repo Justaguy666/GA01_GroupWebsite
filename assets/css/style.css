@@ -84,23 +84,22 @@ nav ul li a {
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
-  line-height: 69px;        /* căn giữa theo header */
-  padding: 0 24px;          /* vùng click rộng hơn */
+  line-height: 69px;
+  padding: 0 24px;
   transition: background-color 0.3s;
 }
 
 nav ul li:hover > a {
-  background-color: #ccc;   /* hiệu ứng hover phủ toàn vùng */
+  background-color: #ccc;
   color: #000;
 }
 
-/* === SUBNAV === */
 nav ul .subnav {
   min-width: 160px;
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;                  /* căn trái theo menu cha */
+  left: 0;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -120,7 +119,26 @@ nav ul .subnav li:hover a {
   color: #000;
 }
 
-/* === BUTTON === */
+main {
+  padding-top: 100px;
+  min-height: calc(100vh - 69px - 30px + 30px);
+}
+
+footer {
+  display: block;
+  width: 70%;
+  height: 30px;
+  border-top: 2px solid hsl(0, 0%, 0%);
+  text-align: center;
+  justify-self: center;
+}
+
+footer p {
+    font-weight: 600;
+    opacity: 0.5;
+    margin-top: 1.5rem;
+}
+
 .button {
   color: #fff;
   text-decoration: none;
@@ -137,8 +155,4 @@ nav ul .subnav li:hover a {
 
 .nowrap {
     white-space: nowrap;
-}
-
-main {
-   
 }
