@@ -145,7 +145,8 @@ footer {
   height: 30px;
   border-top: 2px solid hsl(0, 0%, 0%);
   text-align: center;
-  justify-self: center;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
 footer p {
@@ -285,9 +286,6 @@ footing .social-list a {
 
 /* Mobile menu */
 #mobile-menu {
-    position: absolute;
-    top: 0;
-    right: 0;
     display: none;
 }
 
@@ -295,6 +293,7 @@ footing .social-list a {
     color: #fff;
     line-height: 69px;
     padding: 0 21px;
+    cursor: pointer;
 }
 
 #mobile-menu .mobile-menu-btn:hover {
@@ -349,17 +348,34 @@ footing .social-list a {
 /* Mobile */
 @media (max-width: 739px) {
     header {
-        height: auto;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    #left-header {
-        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 69px;
         justify-content: space-between;
     }
 
+    #left-header {
+        width: auto;
+        height: 69px;
+        align-items: center;
+        order: 1;
+    }
+
     #right-header {
+        width: 100%;
+        order: 3;
+        justify-content: flex-start;
+    }
+
+    #mobile-menu {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 69px;
+        order: 2;
+    }
+    
+    nav {
         width: 100%;
     }
 
@@ -391,28 +407,28 @@ footing .social-list a {
         display: none;
         flex-direction: column;
         width: 100%;
-        animation: slideDown 0.3s ease-in-out;
+        background-image: var(--header-gradient);
     }
 
     nav ul li .subnav {
         display: none;
     }
 
-    nav ul li.active .subnav {
-        display: block;
-    }
-
-    @keyframes slideDown {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    #mobile-menu {
-        display: block;
+    header.open {
+        height: auto;
     }
 
     header.open nav > ul {
         display: flex;
+    }
+    
+    /* Override hover behavior on mobile */
+    nav ul li:hover .subnav {
+        display: none;
+    }
+    
+    nav ul li.active .subnav {
+        display: block !important;
     }
 
     main {
@@ -444,16 +460,17 @@ footing .social-list a {
         width: 90%;
     }
 
-    card-list {
-      gap: 12px;
-      padding: 12px;
+    #card-list {
+      gap: 16px;
+      padding: 16px;
+      flex-direction: column;
+      align-items: center;
     }
 
     .member-card {
-      width: calc(50% - 12px);
-      aspect-ratio: 4 / 5;
-      height: auto;
-      max-width: 220px;
+      width: 85%;
+      max-width: 280px;
+      height: 320px;
     }
   
     .member-card-inner {
@@ -465,27 +482,27 @@ footing .social-list a {
     }
   
     .member-card img {
-      width: 72%;
-      height: 50%;
-      border-radius: 10px;
+      width: 80%;
+      height: 60%;
+      border-radius: 50%;
     }
   
     .member-card h4 {
-      font-size: 1rem;
+      font-size: 1.1rem;
       margin: 8px 0 4px;
     }
   
     .member-info {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
     }
   
     .member figure {
-      width: 64px;
-      height: 64px;
+      width: 70px;
+      height: 70px;
     }
   
     .member-introduce {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
   
     @media (pointer: coarse) {
