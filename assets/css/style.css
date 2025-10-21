@@ -619,10 +619,12 @@ footing .social-list a {
 }
 
 html, body {
-  height: auto;
-  min-height: 100%;
-  background: var(--body-gradient) fixed;
+  min-height: 100vh;
+}
+
+body {
+  background: var(--body-gradient);
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   background-attachment: fixed;
 }
