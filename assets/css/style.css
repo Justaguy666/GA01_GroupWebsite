@@ -135,6 +135,7 @@ main {
   justify-content: center;
   justify-items: center;
   flex-direction: column;
+  padding-top: 69px;
 }
 
 /* Footer */
