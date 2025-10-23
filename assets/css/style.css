@@ -18,6 +18,10 @@ html {
     font-family: 'Work Sans', Arial, sans-serif;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 #home-title h2 {
   font-size: xxx-large;
 }

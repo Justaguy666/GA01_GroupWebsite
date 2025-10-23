@@ -6,28 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpicyBytes</title>
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/themify-icons-font/themify-icons/themify-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href = "assets/css/styles.css">
 </head>
 
 <body>
-    <header>
-        <section id="left-header">
-            <img id="Logo" src="./assets/images/logo.png" alt="Logo">
+    <header class="fixed top-0 left-0 right-0 z-1
+                   flex justify-between items-center 
+                   h-[69px] p-0
+                   bg-header-gradient">
+        <section id="left-header" class = "width-50px
+                                           flex content-center ">
+            <img id="Logo" src="./assets/images/logo.png" alt="Logo" class = "w-[50px] h-[50px] rounded-full ml-[50px]">
         </section>
 
-        <section id="right-header">
+        <section id="right-header" class = "flex items-center">
             <!-- Begin: Navigation -->
             <nav>
-                <ul>
+                <ul class = "flex direction-row list-none ">
                     <li><a href="./index.html">Home</a></li>
                     <li>
                         <a href="">
                             Team
                             <i class="nav-arrow-down ti-angle-down"></i>
                         </a>
-                        <ul class="subnav">
+                        <ul class="hidden min-w-[160px] absolute top-full right-0
+                                   bg-white shadow-lg
+                                   group-hover:block
+                                   subnav">
                             <li class="nowrap"><a href="../members/nmkhoi.html">Nguyễn Minh Khôi</a></li>
                             <li class="nowrap"><a href="../members/ldnbao.html">Lê Đức Ngọc Bảo</a></li>
                             <li class="nowrap"><a href="../members/okvinh.html">Ong Khánh Vinh</a></li>
@@ -43,13 +51,13 @@
         </section>
     </header>
 
-    <main>
+    <main class = "pt-[100px] min-h-[calc(100vh-69px-30px+30px)]">
         <section id="home-title">
             <h2>SpicyBytes</h2>
             <p>A passionate group of students working together to create web projects.</p>
         </section>
-
-        <section id="card-list">
+        
+        <section id="card-list" class = "flex gap-[20px] p-[20px] justify-center flex-wrap">
             <a href="./members/okvinh.html" class="member-card">
               <div class="member-card-inner">
                 <div class="member-card-face member-card-front">
