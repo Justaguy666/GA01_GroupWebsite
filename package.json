@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "build": "tailwindcss -i ./assets/css/styles.css -o ./dist/output.css",
+    "dev": "tailwindcss -i ./assets/css/styles.css -o ./dist/output.css --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "tailwindcss": "^4.1.16"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.16"
+  }
+}
