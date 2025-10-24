@@ -313,6 +313,30 @@ footing .social-list a {
   color: #000;
 }
 
+/* On touch devices, don't show hover/active highlight for the burger */
+@media (hover: none), (pointer: coarse) {
+  #mobile-menu .mobile-menu-btn { -webkit-tap-highlight-color: transparent; }
+  #mobile-menu .mobile-menu-btn:hover,
+  #mobile-menu .mobile-menu-btn:active {
+    background-color: transparent;
+    color: inherit;
+  }
+}
+
+/* Pure CSS hamburger (3 bars), no SVG/no icon font */
+#mobile-menu .mobile-menu-btn {
+  display: inline-block;
+  width: 28px;
+  height: 20px;
+  vertical-align: middle;
+  
+  /* draw three horizontal bars using layered backgrounds */
+  background:
+    linear-gradient(currentColor, currentColor) center 2px / 22px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) center 9px / 22px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) center 16px / 22px 2px no-repeat;
+}
+
 /* Tablet */
 @media (max-width: 1024px) {
   nav ul li a {
@@ -538,6 +562,27 @@ footing .social-list a {
     .member-card:active .member-card-inner {
       transform: rotateY(180deg);
     }
+  }
+
+  /* Remove focus outlines/highlight when menu is open on mobile */
+  body {
+    -webkit-tap-highlight-color: transparent; /* iOS/Android remove tap highlight */
+  }
+  #mobile-menu .mobile-menu-btn:focus {
+    outline: none;
+  }
+  nav a:focus,
+  nav a:focus-visible,
+  nav a:active,
+  nav ul .subnav li a:focus,
+  nav ul .subnav li a:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+  header.open nav a:focus,
+  header.open nav a:focus-visible {
+    outline: none;
+    box-shadow: none;
   }
 }
 
