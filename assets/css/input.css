@@ -112,21 +112,26 @@ footer p {
   @apply text-[large];
 }
 .container {
-  @apply flex w-[640px] h-[506px] bg-[image:var(--member-info-gradient)] bg-clip-padding overflow-hidden mb-[20px] mx-auto my-0 rounded-[50px] border-2 border-solid border-black; /* prevent background from painting under the border and clip children to rounded corners */
-  -webkit-background-clip: padding-box;
+  @apply flex w-[640px] h-[506px] overflow-hidden mb-[20px] mx-auto rounded-[50px] border-2 border-solid border-black;
+  background-image: var(--member-info-gradient);
 }
 .left-content {
-  @apply w-2/5 bg-[image:var(--member-info-left-content-gradient)] h-full flex justify-center items-center p-2.5 rounded-tl-[50px] rounded-bl-[50px] border-r-2 border-r-[black] border-solid; /* float: left; */
+  @apply relative w-2/5 h-full flex justify-center items-center p-2.5;
+  background-image: var(--member-info-left-content-gradient);
+}
+.left-content::after {
+  content: "";
+  @apply content-[''] absolute top-0 right-0 h-full w-[0.5px] bg-black origin-right scale-x-[0.5];
 }
 .member-ava {
   @apply w-6/12 aspect-square overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.1)] flex justify-center items-center mx-auto my-0 rounded-[50%];
-  background: #f5f5f5;
+  background: transparent;
 }
 .member-ava img {
   @apply w-full h-full object-cover block rounded-[50%];
 }
 .right-content {
-  @apply w-3/5 p-2.5; /* float: right; */
+  @apply w-3/5 p-2.5 shadow-[inset_10px_0_20px_rgba(0,0,0,0.1)]; /* float: right; */
 }
 heading {
   @apply relative mx-5 my-0;
@@ -273,7 +278,7 @@ footing .social-list a {
     @apply flex-col h-auto w-[90%] mt-[50px];
   }
   .left-content {
-    @apply w-full border-r-[none] border-b-2 border-b-[black] border-solid;
+    @apply w-full;
   }
   .right-content {
     @apply w-full;
@@ -405,7 +410,7 @@ footing .social-list a {
   @apply inline-block text-[#393e46] opacity-80;
 }
 .line {
-  @apply w-full mx-0 my-2.5 border-t-black-1000 border-t border-solid;
+  @apply w-full mx-0 my-2.5 border-t-black border-t border-solid;
 }
 html {
   @apply h-full;
