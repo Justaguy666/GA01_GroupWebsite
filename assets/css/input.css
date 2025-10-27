@@ -412,7 +412,7 @@ html {
 }
 body {
   @apply min-h-full bg-fixed bg-cover m-0 p-0;
-  background: var(--body-gradient);
+  background-image: var(--body-gradient);
 }
 
 /* Tablet-only override placed after base rules to win cascade */
