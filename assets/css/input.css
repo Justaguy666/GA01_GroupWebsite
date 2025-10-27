@@ -94,7 +94,7 @@ main {
 
 /* Footer */
 footer {
-  @apply block w-[70%] h-[30px] text-center mt-[50px] mx-auto my-0 border-t-2 border-t-black border-solid;
+  @apply block w-[70%] h-0 text-center mx-auto my-0 border-t-[1px] border-t-[rgba(0,0,0,0.5)] border-solid;
   background: transparent;
 }
 footer p {
@@ -112,7 +112,7 @@ footer p {
   @apply text-[large];
 }
 .container {
-  @apply flex w-[640px] h-[506px] bg-[image:var(--member-info-gradient)] bg-clip-padding overflow-hidden mb-[50px] mx-auto my-0 rounded-[50px] border-2 border-solid border-black; /* prevent background from painting under the border and clip children to rounded corners */
+  @apply flex w-[640px] h-[506px] bg-[image:var(--member-info-gradient)] bg-clip-padding overflow-hidden mb-[20px] mx-auto my-0 rounded-[50px] border-2 border-solid border-black; /* prevent background from painting under the border and clip children to rounded corners */
   -webkit-background-clip: padding-box;
 }
 .left-content {
