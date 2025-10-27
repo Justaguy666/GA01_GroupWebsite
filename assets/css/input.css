@@ -1,0 +1,426 @@
+/*
+  Based on TailwindCSS recommendations,
+  consider using classes instead of the `@apply` directive
+  @see https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction
+*/
+/* Reset CSS */
+* {
+  @apply box-border m-0 p-0;
+}
+
+/* GLOBAL VARIABLES */
+:root {
+  --header-gradient: linear-gradient(
+    275deg,
+    hsl(217, 10%, 25%) 0%,
+    hsl(216, 18%, 16%) 100%
+  );
+  --body-gradient: linear-gradient(
+    150.19deg,
+    rgba(34, 40, 49, 0.24) 23.24%,
+    rgba(57, 62, 70, 0.56) 46.27%,
+    rgba(223, 208, 184, 0.8) 76.97%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
+  --member-info-left-content-gradient: linear-gradient(
+    117.11deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(248, 248, 248, 0.5) 46.94%,
+    rgba(241, 241, 241, 0.5) 93.88%
+  );
+  --member-info-gradient: linear-gradient(
+    117.11deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(248, 248, 248, 0.5) 46.94%,
+    rgba(241, 241, 241, 0.5) 93.88%
+  );
+}
+
+/* Common */
+html {
+  font-family: "Work Sans", Arial, sans-serif;
+}
+#home-title h2 {
+  @apply text-[xxx-large];
+}
+.button {
+  @apply text-white no-underline bg-black inline-block mt-0 mb-4 px-4 py-2 border-[none] hover:bg-[#757575] text-white no-underline bg-black inline-block transition-[background-color] duration-[0.3s] px-4 py-2 border-[none] hover:bg-[#757575];
+}
+
+/* Header */
+header {
+  @apply h-[69px] bg-[image:var(--header-gradient)] fixed z-[1] flex justify-between items-center p-0 top-0 inset-x-0;
+}
+#left-header {
+  @apply flex content-center;
+}
+#right-header {
+  @apply flex items-center;
+}
+header img {
+  @apply w-auto h-[50px] px-6 py-0 rounded-[50%];
+}
+nav ul {
+  @apply flex;
+  list-style: none;
+}
+nav ul li {
+  @apply relative;
+}
+nav ul li a {
+  @apply block text-white no-underline leading-[69px] transition-[background-color] duration-[0.3s] px-6 py-0;
+}
+nav ul li:hover > a {
+  @apply bg-[#ccc] text-black;
+}
+nav ul .subnav {
+  @apply min-w-[160px] hidden absolute bg-white shadow-[0_0_10px_rgba(0,0,0,0.3)] right-0 top-full;
+}
+nav ul li:hover .subnav {
+  @apply block;
+}
+nav ul .subnav li a {
+  @apply text-black leading-[22px] px-4 py-2;
+}
+nav ul .subnav li:hover a {
+  @apply bg-[#ccc] text-black;
+}
+main {
+  @apply min-h-[calc(100vh_-_69px_-_30px_+_30px)] pt-[100px];
+}
+#member-info {
+  @apply flex justify-center justify-items-center flex-col pt-[69px];
+}
+
+/* Footer */
+footer {
+  @apply block w-[70%] h-[30px] text-center mt-[50px] mx-auto my-0 border-t-2 border-t-black border-solid;
+  background: transparent;
+}
+footer p {
+  @apply font-semibold opacity-50 mt-6;
+}
+.nowrap {
+  @apply whitespace-nowrap;
+}
+
+/* Home */
+#home-title {
+  @apply flex flex-col items-center gap-2.5 mt-[50px] mb-[100px];
+}
+#home-title p {
+  @apply text-[large];
+}
+.container {
+  @apply flex w-[640px] h-[506px] bg-[image:var(--member-info-gradient)] bg-clip-padding overflow-hidden mb-[50px] mx-auto my-0 rounded-[50px] border-2 border-solid border-black; /* prevent background from painting under the border and clip children to rounded corners */
+  -webkit-background-clip: padding-box;
+}
+.left-content {
+  @apply w-2/5 bg-[image:var(--member-info-left-content-gradient)] h-full flex justify-center items-center p-2.5 rounded-tl-[50px] rounded-bl-[50px] border-r-2 border-r-[black] border-solid; /* float: left; */
+}
+.member-ava {
+  @apply w-6/12 aspect-square overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.1)] flex justify-center items-center mx-auto my-0 rounded-[50%];
+  background: #f5f5f5;
+}
+.member-ava img {
+  @apply w-full h-full object-cover block rounded-[50%];
+}
+.right-content {
+  @apply w-3/5 p-2.5; /* float: right; */
+}
+heading {
+  @apply relative mx-5 my-0;
+}
+heading h2 {
+  @apply text-black opacity-60;
+}
+.member-intro {
+  @apply leading-loose text-justify text-[small] mx-5 my-2.5;
+}
+.member-role {
+  @apply flex w-[244px] h-10 text-center justify-center items-center uppercase font-extrabold mx-5 my-0 rounded-[50px];
+  background: linear-gradient(82deg, #f8f8f8, #dfd0b8);
+}
+footing .social-list a {
+  @apply no-underline opacity-80 text-black text-2xl inline-block m-2.5 p-[5px] rounded-[10px] border-[#000] border-solid border-[1px];
+}
+
+/* Mobile menu */
+#mobile-menu {
+  @apply hidden;
+}
+#mobile-menu .mobile-menu-btn {
+  @apply text-white leading-[69px] cursor-pointer px-[21px] py-0 hover:bg-[#ccc] hover:text-black inline-block w-7 h-5 align-middle;
+}
+
+/* On touch devices, don't show hover/active highlight for the burger */
+@media (hover: none), (pointer: coarse) {
+  #mobile-menu .mobile-menu-btn {
+    -webkit-tap-highlight-color: transparent;
+  }
+  #mobile-menu .mobile-menu-btn:hover,
+  #mobile-menu .mobile-menu-btn:active {
+    @apply bg-transparent text-inherit;
+  }
+}
+
+/* Pure CSS hamburger (3 bars), no SVG/no icon font */
+#mobile-menu .mobile-menu-btn {
+  /* draw three horizontal bars using layered backgrounds */
+  background: linear-gradient(currentColor, currentColor) center 2px / 22px 2px
+      no-repeat,
+    linear-gradient(currentColor, currentColor) center 9px / 22px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) center 16px / 22px 2px no-repeat;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  nav ul li a {
+    @apply px-4 py-0;
+  }
+  img {
+    @apply px-4 py-0;
+  }
+  .container {
+    @apply w-[90%];
+  }
+  #card-list {
+    @apply grid grid-cols-[repeat(2,minmax(240px,1fr))] gap-[24px_32px] justify-items-center w-full max-w-[760px] mx-auto my-0 px-6 py-4;
+  }
+  .member-card {
+    @apply w-full max-w-[260px] h-[300px];
+  }
+  .member-card img {
+    @apply w-[78%] h-[58%];
+  }
+  .member-card h4 {
+    @apply text-[1.1rem];
+  }
+  .member-info {
+    @apply text-[0.9rem];
+  }
+  nav ul li:hover .subnav {
+    @apply hidden;
+  }
+  nav ul li.active .subnav {
+    @apply block;
+  }
+  @media (pointer: coarse) {
+    .member-card:active .member-card-inner {
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  header {
+    @apply flex-row flex-wrap h-[69px] justify-between;
+  }
+  #left-header {
+    @apply w-auto h-[69px] items-center order-1;
+  }
+  #right-header {
+    @apply w-full order-3 justify-start;
+  }
+  #mobile-menu {
+    @apply relative flex items-center h-[69px] order-2;
+  }
+  nav {
+    @apply w-full;
+  }
+  nav ul {
+    @apply flex-col w-full;
+  }
+  nav ul li {
+    @apply w-full;
+  }
+  nav ul li a {
+    @apply leading-[46px] text-left;
+  }
+  nav ul .subnav {
+    @apply bg-[rgba(0,0,0,0.3)];
+    position: initial;
+  }
+  nav ul .subnav li a {
+    @apply text-white px-10 py-0;
+  }
+  nav > ul {
+    @apply hidden flex-col w-full bg-[image:var(--header-gradient)];
+  }
+  nav ul li .subnav {
+    @apply hidden;
+  }
+  header.open {
+    @apply h-auto;
+  }
+  header.open nav > ul {
+    @apply flex;
+  } /* Override hover behavior on mobile */
+  nav ul li:hover .subnav {
+    @apply hidden;
+  }
+  nav ul li.active .subnav {
+    @apply block;
+  }
+  main {
+    @apply pt-[69px];
+  }
+  #home-title {
+    @apply mt-[30px] mb-[50px];
+  }
+  .container {
+    @apply flex-col h-auto w-[90%] mt-[50px];
+  }
+  .left-content {
+    @apply w-full border-r-[none] border-b-2 border-b-[black] border-solid;
+  }
+  .right-content {
+    @apply w-full;
+  }
+  footer {
+    @apply w-[90%];
+  }
+  #card-list {
+    @apply gap-4 flex-col items-center p-4;
+  }
+  .member-card {
+    @apply w-[85%] max-w-[280px] h-80;
+  }
+  .member-card-inner {
+    @apply rounded-xl;
+  }
+  .member-card-face {
+    @apply p-2;
+  }
+  .member-card img {
+    @apply w-4/5 h-3/5 rounded-[50%];
+  }
+  .member-card h4 {
+    @apply text-[1.1rem] mt-2 mb-1 mx-0;
+  }
+  .member-info {
+    @apply text-[0.9rem];
+  }
+  .member figure {
+    @apply w-[70px] h-[70px];
+  }
+  .member-introduce {
+    @apply text-[0.95rem];
+  }
+  @media (pointer: coarse) {
+    .member-card:hover .member-card-inner {
+      transform: none;
+    }
+    .member-card:active .member-card-inner {
+      transform: rotateY(180deg);
+    }
+  } /* Remove focus outlines/highlight when menu is open on mobile */
+  body {
+    -webkit-tap-highlight-color: transparent; /* iOS/Android remove tap highlight */
+  }
+  #mobile-menu .mobile-menu-btn:focus {
+    outline: none;
+  }
+  nav a:focus,
+  nav a:focus-visible,
+  nav a:active,
+  nav ul .subnav li a:focus,
+  nav ul .subnav li a:focus-visible {
+    @apply shadow-none;
+    outline: none;
+  }
+  header.open nav a:focus,
+  header.open nav a:focus-visible {
+    @apply shadow-none;
+    outline: none;
+  }
+}
+
+/* Phone landscape: also add top margin even when width > 739px */
+@media (orientation: landscape) and (pointer: coarse) and (max-height: 480px) {
+  .container {
+    @apply mt-[50px];
+  }
+}
+
+/* Cards */
+#card-list {
+  @apply flex gap-5 justify-center flex-wrap p-5;
+}
+.member-card {
+  @apply relative block w-[200px] h-[250px] cursor-pointer;
+  perspective: 1000px;
+}
+.member-card-inner {
+  @apply relative w-full h-full transition-transform duration-[0.6s] ease-[ease-in-out];
+  transform-style: preserve-3d;
+}
+.member-card:hover .member-card-inner {
+  transform: rotateY(180deg);
+}
+.member-card-face {
+  @apply absolute overflow-hidden flex flex-col items-center justify-center rounded-xl inset-0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.member-card-front {
+  @apply border backdrop-blur-[10px] shadow-[0_8px_20px_rgba(0,0,0,0.15)] border-solid border-[rgba(0,0,0,0.2)];
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(250, 250, 250, 0.5) 50%,
+    rgba(240, 240, 240, 0.4) 100%
+  );
+}
+.member-card-back {
+  @apply p-2.5;
+  transform: rotateY(180deg);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(250, 250, 250, 0.5) 50%,
+    rgba(240, 240, 240, 0.4) 100%
+  );
+}
+.member-card img {
+  @apply w-4/5 h-3/5 object-cover rounded-[50%];
+}
+.member-card h4 {
+  @apply text-[1.2rem] font-semibold text-[#222831] mt-2.5 mb-[5px] mx-0;
+}
+.member-info {
+  @apply flex flex-col items-center text-[0.95rem] text-[#393e46] opacity-80;
+}
+.member {
+  @apply flex flex-col items-center gap-2.5;
+}
+.member figure {
+  @apply w-20 h-20 m-0;
+}
+.member figure img {
+  @apply w-full h-full object-cover rounded-[50%];
+}
+.member-introduce {
+  @apply inline-block text-[#393e46] opacity-80;
+}
+.line {
+  @apply w-full mx-0 my-2.5 border-t-black border-t border-solid;
+}
+html {
+  @apply h-full;
+}
+body {
+  @apply min-h-full bg-fixed bg-cover m-0 p-0;
+  background: var(--body-gradient);
+}
+
+/* Tablet-only override placed after base rules to win cascade */
+@media (min-width: 740px) and (max-width: 1024px) {
+  #card-list {
+    @apply grid grid-cols-[repeat(2,minmax(240px,1fr))] gap-[24px_32px] justify-items-center w-full max-w-[820px] mx-auto my-0 px-6 py-4;
+  }
+  .member-card {
+    @apply w-full max-w-[260px] h-[300px];
+  }
+}

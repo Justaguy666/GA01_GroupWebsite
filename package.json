@@ -1,0 +1,42 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.13"
+  },
+  "name": "ga02_tailwindgroupwebsite",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "baseline-browser-mapping": "^2.8.20",
+    "browserslist": "^4.27.0",
+    "caniuse-lite": "^1.0.30001751",
+    "electron-to-chromium": "^1.5.240",
+    "escalade": "^3.2.0",
+    "fraction.js": "^4.3.7",
+    "nanoid": "^3.3.11",
+    "node-releases": "^2.0.26",
+    "normalize-range": "^0.1.2",
+    "picocolors": "^1.1.1",
+    "postcss-value-parser": "^4.2.0",
+    "source-map-js": "^1.2.1",
+    "update-browserslist-db": "^1.1.4"
+  },
+  "scripts": {
+  "build": "npx tailwindcss -i ./assets/css/input.css -o ./dist/output.css",
+  "watch": "npx tailwindcss -i ./assets/css/input.css -o ./dist/output.css --watch",
+  "dev": "npm run watch"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Justaguy666/GA01_GroupWebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Justaguy666/GA01_GroupWebsite/issues"
+  },
+  "homepage": "https://github.com/Justaguy666/GA01_GroupWebsite#readme",
+  "description": ""
+}
