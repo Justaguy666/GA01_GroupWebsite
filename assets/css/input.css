@@ -405,7 +405,7 @@ footing .social-list a {
   @apply inline-block text-[#393e46] opacity-80;
 }
 .line {
-  @apply w-full mx-0 my-2.5 border-t-black border-t border-solid;
+  @apply w-full mx-0 my-2.5 border-t-black-1000 border-t border-solid;
 }
 html {
   @apply h-full;
